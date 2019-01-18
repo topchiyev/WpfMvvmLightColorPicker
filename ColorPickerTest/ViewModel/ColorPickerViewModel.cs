@@ -39,19 +39,7 @@ namespace Gymdata.Accreditation.ViewModel
                 RaisePropertyChanged(() => Color);
             }
         }
-
-        private string _hueStr;
-
-        public string HueStr
-        {
-            get { return _hueStr; }
-            set
-            {
-                _hueStr = value;
-                RaisePropertyChanged(() => HueStr);
-            }
-        }
-
+        
         private bool _isPickingHue;
         private bool _isPickingColor;
 
@@ -475,8 +463,7 @@ namespace Gymdata.Accreditation.ViewModel
         public RelayCommand ResetCmd => _resetCmd ?? (_resetCmd = new RelayCommand(() =>
         {
             Color = _originalColor;
-            ResetHue();
-            ResetDial();
+            LoadFromColor();
         }));
 
         private RelayCommand _cancelCmd;
