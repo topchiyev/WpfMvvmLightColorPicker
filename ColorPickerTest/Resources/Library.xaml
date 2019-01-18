@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:Gymdata.Accreditation.Converter">
+    <SolidColorBrush Color="#F1F3F4" x:Key="ControlColor"/>
+    <SolidColorBrush Color="#DEE1E6" x:Key="DarkControlColor"/>
+    <SolidColorBrush Color="#40454D" x:Key="MenuIconColor"/>
+    <SolidColorBrush Color="#CCCCCC" x:Key="BorderColor"/>
+    <SolidColorBrush Color="#999999" x:Key="DarkBorderColor"/>
+
+    <NullableBoolConverter x:Key="NullableBoolConverter"/>
+    <ThicknessConverter  x:Key="ThicknessConverter"/>
+    <converter:ColorToHexConverter x:Key="ColorToHexConverter"/>
+    <converter:HexToColorConverter x:Key="HexToColorConverter"/>
+    
+    <BitmapImage UriSource="test.jpg" x:Key="TestImage"/>
+</ResourceDictionary>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="Gymdata.Accreditation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorPickerTest"
+        xmlns:view="clr-namespace:Gymdata.Accreditation.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="{StaticResource ControlColor}"
+        DataContext="{Binding Path=MainViewModel, Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Color: "/>
+                <view:ColorIndicatorView DataContext="{Binding Color}"/>
+            </StackPanel>
+            <Button Command="{Binding PickColorCmd}" Margin="10">
+                <Grid>
+                    <TextBlock Text="Pick a color"/>
+                    <view:ColorPickerView DataContext="{Binding ColorPicker}" />
+                </Grid>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

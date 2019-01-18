@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Gymdata.Accreditation.View.ColorIndicatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:Gymdata.Accreditation.View"
+             xmlns:viewModel="clr-namespace:Gymdata.Accreditation.ViewModel"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="30"
+             d:DataContext="{d:DesignInstance Type=system:String}">
+    <Border
+        Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type view:ColorIndicatorView}}, Path=ActualHeight}"
+        Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type view:ColorIndicatorView}}, Path=ActualWidth}">
+        <Border CornerRadius="1000000" Background="{StaticResource MenuIconColor}" RenderOptions.BitmapScalingMode="HighQuality">
+            <Border Margin="1" CornerRadius="1000000" Background="White" RenderOptions.BitmapScalingMode="HighQuality">
+                <Border Margin="2" CornerRadius="1000000" RenderOptions.BitmapScalingMode="HighQuality">
+                    <Border.Background>
+                        <SolidColorBrush Color="{Binding Mode=OneWay, Converter={StaticResource HexToColorConverter}}"/>
+                    </Border.Background>
+                </Border>
+            </Border>
+        </Border>
+    </Border>
+</UserControl>
+
